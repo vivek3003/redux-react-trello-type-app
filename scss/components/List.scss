@@ -1,0 +1,54 @@
+@import '../vars';
+.List{
+	background:$list-bg;
+	width:$list-width;
+	max-height:95%;
+	overflow-y:hidden;
+	border-radius:$list-br;
+	margin:$list-margin;
+	display:inline-block;
+	white-space: nowrap;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+
+	.List-Title{
+		margin:0;
+		padding:0.5em;
+		overflow-x:hidden;
+		span{
+			display: inline-block;
+			margin-right:0.5em;
+			max-width:70%;
+			overflow-x:hidden;
+			text-overflow:ellipsis;
+		}
+		span.List-Count{
+			background:#fff;
+			border-radius:8px;
+			padding:0px 6px ;
+			text-align: center;
+		}
+	}
+	.List-Container{
+		max-height:450px;
+		overflow-y:auto;
+		padding: 0.5em;
+	}
+	.List-Footer{
+		margin:0;
+		padding:0.5em;
+	}
+	input.add_list{
+		background: #ddd;
+		display: block;
+		width: 100%;
+		font-size:1em;
+		border-radius: 4px;
+		padding:0.5em;
+		border:0px;
+		margin:0;
+		&:focus{
+			outline:0;
+		}
+	}
+}

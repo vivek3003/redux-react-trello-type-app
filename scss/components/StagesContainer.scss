@@ -1,0 +1,11 @@
+@import '../vars';
+.StagesContainer{
+	position: absolute;
+	top:$nav-height;
+	bottom: 0px;
+	left:0px;
+	right:0px;
+	overflow-y:hidden;
+	overflow-x:scroll;
+	white-space:nowrap;
+}

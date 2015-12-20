@@ -1,0 +1,59 @@
+@import "../vars";
+
+.Card{
+	min-height:60px;
+	background:$card-bg;
+	color:$card-color;
+	width:100%;
+	padding:0.5em;
+	font-weight:200;
+	margin:0.5em 0px;
+	border-radius: 2px;
+	border-bottom: 1px solid #ccc;
+	white-space: normal;
+}
+
+.AddCard{
+	color:$card-color;
+	width:100%;
+	padding:0.5em;
+	font-weight:200;
+	border-radius: 2px;
+	p{
+		color:#444;
+		margin:0;
+	}
+	.AddCard-Input-Container{
+		display: none;
+		input{
+			font-size:1em;
+			display: block;
+			border:0px;
+			width: 100%;
+			outline:0;
+			margin:0.3em 0px;
+			white-space: normal;
+			&:focus{
+				outline:0;
+			}
+		}
+		.btn{
+			margin-right:0.5em;
+		}
+	}
+	&:hover{
+		background:#eee;
+		cursor: text;
+	}
+	&.clicked{
+		background:$card-bg;
+		border-bottom: 1px solid #ccc;
+		p{
+			display: none;
+		}
+		.AddCard-Input-Container{
+			display: block;
+		}
+	}
+
+}

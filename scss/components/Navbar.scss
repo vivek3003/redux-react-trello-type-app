@@ -1,0 +1,11 @@
+@import '../vars';
+nav{
+	background: $nav-bg;
+	padding:$nav-padding;
+	p{
+		margin:0px;
+		padding-left:36px;
+		font-size:1em;
+		color:$nav-color;
+	}
+}
