@@ -11,6 +11,16 @@
 	border-radius: 2px;
 	border-bottom: 1px solid #ccc;
 	white-space: normal;
+	&.being-dragged{
+		position: fixed;
+		z-index:99999;
+		box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.2);
+		transform:rotate(3deg);
+	}
+}
+#dragged-card{
+	background: #888;
+	opacity: 0.9;
 }
 
 .AddCard{
