@@ -1,10 +1,11 @@
 import React from 'react';
 import List from './List.jsx';
 import AddList from './AddList.jsx';
-
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd';
 import '../../scss/components/StagesContainer.scss';
 
-export default class StagesContainer extends React.Component {
+class StagesContainer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -20,3 +21,5 @@ export default class StagesContainer extends React.Component {
     );
   }
 }
+
+export default DragDropContext(HTML5Backend)(StagesContainer);

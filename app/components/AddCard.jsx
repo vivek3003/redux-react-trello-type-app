@@ -37,6 +37,7 @@ class AddCard extends React.Component {
       	<div className='AddCard-Input-Container'>
       		<input 	type='text'
                 onKeyUp={(evt) => this.addCardToList(this.props.listId, evt)}
+                onBlur={e => this.setState({'clicked':false})}
                 className='AddCard-input'
                 ref={(ref) => this.addCardInput = ref}
                 placeholder='Input Here'

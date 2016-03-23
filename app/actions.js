@@ -1,7 +1,7 @@
 /* CONSTANTS */
 export const ADD_LIST = 'ADD_LIST';
 export const ADD_CARD = 'ADD_CARD';
-
+export const MOVE_CARD = 'MOVE_CARD';
 //Creators
 function addListSync(text, nextListId){
     return {
@@ -36,4 +36,13 @@ export function addCard(text, listId) {
         window.localStorage['nextCardId'] = parseInt(nextCardId);
         dispatch(addCardSync(text, listId, nextCardId ));
     };
+}
+
+export function moveCard(cardId, oldListId, newListId){
+    return {
+        type:MOVE_CARD,
+        cardId:cardId,
+        oldListId:oldListId,
+        newListId:newListId
+    }
 }

@@ -10,7 +10,14 @@
 	white-space: nowrap;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
-
+    .DropArea{
+    	background: #444;
+	    height: 60px;
+	    border-radius: 4px;
+	    color: #FFF;
+	    opacity: 0.3;
+	    transition:all 0.2s ease;
+    }
 	.List-Title{
 		margin:0;
 		padding:0.5em;
