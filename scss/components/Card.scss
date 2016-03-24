@@ -11,6 +11,12 @@
 	border-radius: 2px;
 	border-bottom: 1px solid #ccc;
 	white-space: normal;
+
+	&--wrap{
+		display: inline-block;
+		width: 224px;
+		height: 60px;
+	}
 }
 
 .AddCard{

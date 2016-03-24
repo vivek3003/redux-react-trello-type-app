@@ -4,6 +4,7 @@ import AddList from './AddList.jsx';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DragDropContext } from 'react-dnd';
 import '../../scss/components/StagesContainer.scss';
+import CustomDragLayer from './CustomDragLayer';
 
 class StagesContainer extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class StagesContainer extends React.Component {
       <div className='StagesContainer'>
         {lists}
         <AddList currentListLength={this.props.lists.length}/>
+        <CustomDragLayer />
       </div>
     );
   }
