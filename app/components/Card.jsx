@@ -3,6 +3,10 @@ import '../../scss/components/Card.scss';
 import { DragSource } from 'react-dnd';
 import {connect} from 'react-redux';
 import {moveCard} from '../actions.js';
+import { getEmptyImage } from 'react-dnd-html5-backend';
+import PlainCard from './PlainCard.jsx';
+import {shallowEqual} from '../utils/shallowEqual';
+
 const cardSource = {
     beginDrag(props) {
         return {
@@ -27,7 +31,8 @@ const cardSource = {
 function collect(connect, monitor) {
   return {
     connectDragSource: connect.dragSource(),
-    isDragging: monitor.isDragging()
+    isDragging: monitor.isDragging(),
+    connectDragPreview: connect.dragPreview()
   };
 }
 
@@ -44,17 +49,29 @@ class Card extends React.Component {
         super(props);
         this.displayName = 'Card';
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        return !shallowEqual(this.props, nextProps) ||
+               !shallowEqual(this.state, nextState);
+    }
+    componentDidMount() {
+        // Use empty image as a drag preview so browsers don't draw it
+        // and we can draw whatever we want on the custom drag layer instead.
+        this.props.connectDragPreview(getEmptyImage(), {
+          // IE fallback: specify that we'd rather screenshot the node
+          // when it already knows it's being dragged so we can hide it with CSS.
+          captureDraggingState: true
+        });
+    }
     render() {
         const { isDragging, connectDragSource, text } = this.props;
         return connectDragSource(
                 <div
-                    className='Card'
                     style={{
-                        opacity:(isDragging?'0.7':'1'),
+                        opacity:(isDragging?'0.4':'1'),
                         background:(isDragging?'#AAA':'#FFF')
                         }}
                     >
-                    {text}
+                    <PlainCard {...this.props}/>
                 </div>
             );
     }

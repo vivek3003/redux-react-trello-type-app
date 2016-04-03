@@ -34,8 +34,8 @@ class ListDropArea extends React.Component{
     }
 
     if(isOver && canDrop){
-      dropAreaStyles['background'] = '#0FC34A';
-      dropAreaStyles['opacity'] = '0.9';
+      dropAreaStyles['background'] = '#009688';
+      dropAreaStyles['opacity'] = '1';
     }
 
     return connectDropTarget(

@@ -9,6 +9,7 @@ var config = {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
+  devtool:'source-map',
   module: {
     loaders: [{
       test: /\.jsx?$/, // A regexp to test the require path. accepts either js or jsx
